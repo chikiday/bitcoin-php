@@ -58,7 +58,7 @@ class StaticBufferCollection extends StaticCollection
      * @param int $offset
      * @return BufferInterface
      */
-    public function offsetGet($offset)
+	#[\ReturnTypeWillChange] public function offsetGet($offset)
     {
         if (!array_key_exists($offset, $this->set)) {
             throw new \OutOfRangeException('No offset found');
