@@ -28,7 +28,7 @@
     "composer/semver": "^1.4.0|^3.2.0",
     "lastguest/murmurhash": "^v2.0.0",
     "paragonie/ecc": "dev-master",
-    "protonlabs/buffertools": "^0.5.0",
+    "protonlabs/buffertools": "dev-master",
     "bitwasp/bech32": "^0.0.1"
   },
   "suggest": {
@@ -47,6 +47,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/chikiday/phpecc.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/chikiday/buffertools-php.git"
     }
   ]
 }
