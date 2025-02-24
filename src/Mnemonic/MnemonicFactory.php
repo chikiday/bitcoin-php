@@ -15,11 +15,11 @@ class MnemonicFactory
 {
 
     /**
-     * @param ElectrumWordListInterface $wordList
-     * @param EcAdapterInterface $ecAdapter
+     * @param ElectrumWordListInterface|null $wordList
+     * @param EcAdapterInterface|null $ecAdapter
      * @return ElectrumMnemonic
      */
-    public static function electrum(ElectrumWordListInterface $wordList = null, EcAdapterInterface $ecAdapter = null): ElectrumMnemonic
+    public static function electrum(?ElectrumWordListInterface $wordList = null, ?EcAdapterInterface $ecAdapter = null): ElectrumMnemonic
     {
         return new ElectrumMnemonic(
             $ecAdapter ?: Bitcoin::getEcAdapter(),
@@ -28,11 +28,11 @@ class MnemonicFactory
     }
 
     /**
-     * @param \BitWasp\Bitcoin\Mnemonic\Bip39\Bip39WordListInterface $wordList
-     * @param EcAdapterInterface $ecAdapter
+     * @param \BitWasp\Bitcoin\Mnemonic\Bip39\Bip39WordListInterface|null $wordList
+     * @param EcAdapterInterface|null $ecAdapter
      * @return Bip39Mnemonic
      */
-    public static function bip39(Bip39WordListInterface $wordList = null, EcAdapterInterface $ecAdapter = null): Bip39Mnemonic
+    public static function bip39(?Bip39WordListInterface $wordList = null, ?EcAdapterInterface $ecAdapter = null): Bip39Mnemonic
     {
         return new Bip39Mnemonic(
             $ecAdapter ?: Bitcoin::getEcAdapter(),

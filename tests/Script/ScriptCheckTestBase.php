@@ -56,7 +56,7 @@ abstract class ScriptCheckTestBase extends AbstractTestCase
     public function buildSpendTransaction(
         TransactionInterface $tx,
         ScriptInterface $scriptSig,
-        ScriptWitnessInterface $scriptWitness = null
+        ?ScriptWitnessInterface $scriptWitness = null
     ): TransactionInterface {
         return new Transaction(
             1,

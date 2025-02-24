@@ -43,13 +43,13 @@ class PublicKey extends Key implements PublicKeyInterface, \Mdanter\Ecc\Crypto\K
      * @param EcAdapter $ecAdapter
      * @param PointInterface $point
      * @param bool $compressed
-     * @param string $prefix
+     * @param string|null $prefix
      */
     public function __construct(
         EcAdapter $ecAdapter,
         PointInterface $point,
         bool $compressed = false,
-        string $prefix = null
+        ?string $prefix = null
     ) {
         $this->ecAdapter = $ecAdapter;
         $this->point = $point;

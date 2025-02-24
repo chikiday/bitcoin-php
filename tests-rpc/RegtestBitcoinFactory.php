@@ -59,7 +59,7 @@ class RegtestBitcoinFactory
      * @param string|null $default
      * @return string
      */
-    private function envOrDefault(string $var, string $default = null): string
+    private function envOrDefault(string $var, ?string $default = null): string
     {
         $value = getenv($var);
         if (in_array($value, [null, false, ""])) {

@@ -82,11 +82,11 @@ class CsvTest extends AbstractTestCase
     /**
      * @param int $verifySequence
      * @param TransactionInterface $unsigned
-     * @param null|string $exception
-     * @param null|string $exceptionMsg
+     * @param string|null $exception
+     * @param string|null $exceptionMsg
      * @dataProvider getCltvCases
      */
-    public function testCsv(int $verifySequence, TransactionInterface $unsigned, string $exception = null, string $exceptionMsg = null)
+    public function testCsv(int $verifySequence, TransactionInterface $unsigned, ?string $exception = null, ?string $exceptionMsg = null)
     {
         /** @var PrivateKeyInterface[] $keys */
         $factory = new PrivateKeyFactory();

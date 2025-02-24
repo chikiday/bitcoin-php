@@ -75,7 +75,7 @@ class PrivateKey extends Key implements PrivateKeyInterface
      * @param RbgInterface|null $rbgInterface
      * @return Signature
      */
-    public function sign(BufferInterface $msg32, RbgInterface $rbgInterface = null): Signature
+    public function sign(BufferInterface $msg32, ?RbgInterface $rbgInterface = null): Signature
     {
         $context = $this->ecAdapter->getContext();
 
@@ -101,7 +101,7 @@ class PrivateKey extends Key implements PrivateKeyInterface
      * @param RbgInterface|null $rbfInterface
      * @return CompactSignature
      */
-    public function signCompact(BufferInterface $msg32, RbgInterface $rbfInterface = null): CompactSignatureInterface
+    public function signCompact(BufferInterface $msg32, ?RbgInterface $rbfInterface = null): CompactSignatureInterface
     {
         $context = $this->ecAdapter->getContext();
         
@@ -221,10 +221,10 @@ class PrivateKey extends Key implements PrivateKeyInterface
     }
 
     /**
-     * @param NetworkInterface $network
+     * @param NetworkInterface|null $network
      * @return string
      */
-    public function toWif(NetworkInterface $network = null): string
+    public function toWif(?NetworkInterface $network = null): string
     {
         $network = $network ?: Bitcoin::getNetwork();
         $wifSerializer = new WifPrivateKeySerializer(new PrivateKeySerializer($this->ecAdapter));

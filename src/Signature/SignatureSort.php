@@ -17,9 +17,9 @@ class SignatureSort implements SignatureSortInterface
 
     /**
      * SignatureSort constructor.
-     * @param EcAdapterInterface $ecAdapter
+     * @param EcAdapterInterface|null $ecAdapter
      */
-    public function __construct(EcAdapterInterface $ecAdapter = null)
+    public function __construct(?EcAdapterInterface $ecAdapter = null)
     {
         $this->ecAdapter = $ecAdapter ?: Bitcoin::getEcAdapter();
     }

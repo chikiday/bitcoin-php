@@ -44,11 +44,11 @@ class Bip39Mnemonic implements MnemonicInterface
     /**
      * Creates a new Bip39 mnemonic string.
      *
-     * @param int $entropySize
+     * @param int|null $entropySize
      * @return string
      * @throws \BitWasp\Bitcoin\Exceptions\RandomBytesFailure
      */
-    public function create(int $entropySize = null): string
+    public function create(?int $entropySize = null): string
     {
         if (null === $entropySize) {
             $entropySize = self::DEFAULT_ENTROPY_BYTE_LEN * 8;

@@ -31,7 +31,7 @@ class SignDataTest extends AbstractTestCase
      * @param int|null $flags
      * @dataProvider getVectors
      */
-    public function testCase(ScriptInterface $rs = null, ScriptInterface $ws = null, int $flags = null)
+    public function testCase(?ScriptInterface $rs = null, ?ScriptInterface $ws = null, ?int $flags = null)
     {
         $signData = new SignData();
         $this->assertFalse($signData->hasRedeemScript());

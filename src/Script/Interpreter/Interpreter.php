@@ -52,9 +52,9 @@ class Interpreter implements InterpreterInterface
     ];
 
     /**
-     * @param EcAdapterInterface $ecAdapter
+     * @param EcAdapterInterface|null $ecAdapter
      */
-    public function __construct(EcAdapterInterface $ecAdapter = null)
+    public function __construct(?EcAdapterInterface $ecAdapter = null)
     {
         $ecAdapter = $ecAdapter ?: Bitcoin::getEcAdapter();
         $this->math = $ecAdapter->getMath();
@@ -216,7 +216,7 @@ class Interpreter implements InterpreterInterface
      * @param ScriptWitnessInterface|null $witness
      * @return bool
      */
-    public function verify(ScriptInterface $scriptSig, ScriptInterface $scriptPubKey, int $flags, CheckerBase $checker, ScriptWitnessInterface $witness = null): bool
+    public function verify(ScriptInterface $scriptSig, ScriptInterface $scriptPubKey, int $flags, CheckerBase $checker, ?ScriptWitnessInterface $witness = null): bool
     {
         static $emptyWitness = null;
         if ($emptyWitness === null) {

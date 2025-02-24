@@ -144,10 +144,10 @@ class Parser implements \Iterator
 
     /**
      * @param int $begin
-     * @param null|int $length
+     * @param int|null $length
      * @return Script
      */
-    public function slice(int $begin, int $length = null)
+    public function slice(int $begin, ?int $length = null)
     {
         if ($begin < 0) {
             throw new \RuntimeException("Invalid start of script - cannot be negative or ");

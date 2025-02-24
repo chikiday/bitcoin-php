@@ -46,11 +46,11 @@ class Bitcoin
     }
 
     /**
-     * @param Math $math
-     * @param GeneratorPoint $generator
+     * @param Math|null $math
+     * @param GeneratorPoint|null $generator
      * @return EcAdapterInterface
      */
-    public static function getEcAdapter(Math $math = null, GeneratorPoint $generator = null)
+    public static function getEcAdapter(?Math $math = null, ?GeneratorPoint $generator = null)
     {
         if (null === self::$adapter) {
             self::$adapter = EcAdapterFactory::getAdapter(
@@ -86,7 +86,7 @@ class Bitcoin
      * @param Math|null $math
      * @return ParamsInterface
      */
-    public static function getDefaultParams(Math $math = null)
+    public static function getDefaultParams(?Math $math = null)
     {
         return new Params($math ?: self::getMath());
     }

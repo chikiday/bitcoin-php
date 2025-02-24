@@ -29,9 +29,9 @@ class PrivateKeyFactory
 
     /**
      * PrivateKeyFactory constructor.
-     * @param EcAdapterInterface $ecAdapter
+     * @param EcAdapterInterface|null $ecAdapter
      */
-    public function __construct(EcAdapterInterface $ecAdapter = null)
+    public function __construct(?EcAdapterInterface $ecAdapter = null)
     {
         $ecAdapter = $ecAdapter ?: Bitcoin::getEcAdapter();
         $this->privSerializer = EcSerializer::getSerializer(PrivateKeySerializerInterface::class, true, $ecAdapter);
@@ -100,13 +100,13 @@ class PrivateKeyFactory
 
     /**
      * @param string $wif
-     * @param NetworkInterface $network
+     * @param NetworkInterface|null $network
      * @return PrivateKeyInterface
      * @throws \BitWasp\Bitcoin\Exceptions\Base58ChecksumFailure
      * @throws \BitWasp\Bitcoin\Exceptions\InvalidPrivateKey
      * @throws \Exception
      */
-    public function fromWif(string $wif, NetworkInterface $network = null): PrivateKeyInterface
+    public function fromWif(string $wif, ?NetworkInterface $network = null): PrivateKeyInterface
     {
         return $this->wifSerializer->parse($wif, $network);
     }

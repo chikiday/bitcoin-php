@@ -57,9 +57,9 @@ class FullyQualifiedScript
      * @param OutputData|null $wsData
      */
     public function __construct(
-        OutputData $spkData,
-        OutputData $rsData = null,
-        OutputData $wsData = null
+        OutputData  $spkData,
+        ?OutputData $rsData = null,
+        ?OutputData $wsData = null
     ) {
         $signScript = $spkData;
         $sigVersion = SigHash::V0;
@@ -182,8 +182,8 @@ class FullyQualifiedScript
         ScriptInterface $scriptPubKey,
         ScriptInterface $scriptSig,
         ScriptWitnessInterface $witness,
-        SignData $signData = null,
-        OutputClassifier $classifier = null
+        ?SignData $signData = null,
+        ?OutputClassifier $classifier = null
     ) {
         $classifier = $classifier ?: new OutputClassifier();
         $signData = $signData ?: new SignData();
