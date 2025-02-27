@@ -4,6 +4,7 @@
   "type": "library",
   "homepage": "https://github.com/bit-wasp/bitcoin-php",
   "license": "Unlicense",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Thomas Kerin",
@@ -27,9 +28,9 @@
     "pleonasm/merkle-tree": "~1.0.0",
     "composer/semver": "^1.4.0|^3.2.0",
     "lastguest/murmurhash": "^v2.0.0",
-    "paragonie/ecc": "dev-master",
     "protonlabs/buffertools": "dev-master",
-    "bitwasp/bech32": "^0.0.1"
+    "bitwasp/bech32": "^0.0.1",
+    "mdanter/ecc": "dev-master"
   },
   "suggest": {
     "ext-secp256k1": "The secp256k1 library for fast and safe elliptic curve operations",
